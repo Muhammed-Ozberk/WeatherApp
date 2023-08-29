@@ -1,0 +1,93 @@
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:id="@+id/frameLayout2"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:background="#00BCD4"/>-->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayoutTomorrow"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00BCD4">
+
+    <!-- Tomorrow's weather icon -->
+    <ImageView
+        android:id="@+id/imageViewTomorrow"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="80dp"
+        android:src="@drawable/sun"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Tomorrow's temperature -->
+    <TextView
+        android:id="@+id/textViewTomorrowDegree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="30°C"
+        android:textColor="#FFFFFF"
+        android:textSize="72sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewTomorrow" />
+
+    <!-- Weather icon for tomorrow -->
+
+    <!-- Tomorrow's weather description -->
+    <TextView
+        android:id="@+id/textViewTomorrowDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Partly Cloudy"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTomorrowDegree" />
+
+    <!-- Tomorrow's temperature range -->
+    <TextView
+        android:id="@+id/textViewTomorrowDegreeRange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="33°C / 20°C"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTomorrowDescription" />
+
+    <!-- Tomorrow's humidity -->
+    <TextView
+        android:id="@+id/textViewTomorrowHumidity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:text="Humidity: 50%"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Bottom decoration -->
+    <ImageView
+        android:id="@+id/imageViewBottomDecorationTomorrow"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="#00838F"
+        app:layout_constraintBottom_toTopOf="@id/textViewTomorrowHumidity" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
