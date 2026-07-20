@@ -1,5 +1,7 @@
 # Hava Durumu
 
+[![CI](https://github.com/Muhammed-Ozberk/WeatherApp/actions/workflows/ci.yml/badge.svg)](https://github.com/Muhammed-Ozberk/WeatherApp/actions/workflows/ci.yml)
+
 Türkiye'deki şehirler için güncel, yarın ve haftalık hava durumu bilgilerini gösteren Android uygulaması. Uygulama Kotlin ile geliştirilmiştir; CollectAPI hava durumu servisini Retrofit üzerinden kullanır.
 
 ## Özellikler
