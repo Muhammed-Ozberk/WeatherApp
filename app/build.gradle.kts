@@ -5,6 +5,20 @@ plugins {
     id("org.jetbrains.kotlin.android")
 }
 
+val localProperties = Properties().apply {
+    val localPropertiesFile = rootProject.file("local.properties")
+    if (localPropertiesFile.exists()) {
+        localPropertiesFile.inputStream().use(::load)
+    }
+}
+
+val weatherApiKey = System.getenv("WEATHER_API_KEY")
+    ?: localProperties.getProperty("WEATHER_API_KEY")
+    ?: ""
+
+fun String.asBuildConfigString(): String =
+    "\"${replace("\\", "\\\\").replace("\"", "\\\"")}\""
+
 android {
     namespace = "com.example.havadurumu"
     compileSdk = 33
@@ -25,11 +39,7 @@ android {
 
         vectorDrawables.useSupportLibrary = true
 
-        val properties = Properties()
-        properties.load(rootProject.file("local.properties").inputStream())
-        buildConfigField("String", "FCM_API_KEY", "\"${properties.getProperty("FCM_API_KEY")}\"")
-
-
+        buildConfigField("String", "WEATHER_API_KEY", weatherApiKey.asBuildConfigString())
     }
 
     buildTypes {
@@ -57,6 +67,8 @@ dependencies {
     implementation("com.google.android.material:material:1.9.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     testImplementation("junit:junit:4.13.2")
+    testImplementation("androidx.arch.core:core-testing:2.2.0")
+    testImplementation("org.mockito:mockito-core:5.3.1")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")

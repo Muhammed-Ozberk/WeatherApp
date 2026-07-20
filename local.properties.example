@@ -1,0 +1,5 @@
+# Android SDK yolunu kendi ortamınıza göre düzenleyin.
+sdk.dir=/path/to/Android/sdk
+
+# CollectAPI tarafından verilen Authorization başlık değeri.
+WEATHER_API_KEY=apikey your-api-key

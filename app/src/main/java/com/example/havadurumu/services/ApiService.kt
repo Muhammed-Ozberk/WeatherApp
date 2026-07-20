@@ -13,6 +13,6 @@ interface ApiService {
         @Query("data.lang") lang: String,
         @Query("data.city") city: String,
         @Header("Content-Type") contentType: String = "application/json",
-        @Header("Authorization") authorization: String = BuildConfig.FCM_API_KEY
+        @Header("Authorization") authorization: String = BuildConfig.WEATHER_API_KEY
     ): Call<WeatherResponse>
 }
